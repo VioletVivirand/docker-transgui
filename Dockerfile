@@ -1,4 +1,4 @@
-FROM jlesage/baseimage-gui:ubuntu-18.04
+FROM jlesage/baseimage-gui:ubuntu-18.04-v3.5.7
 
 ENV TRANSGUI_VERSION=5.18.0
 ENV ENABLE_CJK_FONT=1
