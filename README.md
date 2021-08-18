@@ -1,19 +1,52 @@
-# Transmission GUI, a Docker container with noVNC http access
-This container allows you to have a working Transmission GUI app, reachable via a http noVNC that can be placed behind a reverse proxy.
+# Transmission-Remote-GUI in Docker
 
-More information about the noVNC baseimage here : https://github.com/jlesage/docker-baseimage-gui.
+This is a Docker container for [Transmission-Remote-GUI](https://github.com/transmission-remote-gui/transgui).
 
-Basically, here is a docker-compose exmaple of how to use it :
+The GUI of the application is accessed through a modern web browser (no installation or configuration needed on the client side) or via any VNC client.
+
+This Docker image is based on [jlesage/docker-baseimage-gui](https://github.com/jlesage/docker-baseimage-gui).
+
+## Usage
+
+Create a directory in `$PWD/config` before executing the following command.
+
+**Option 1**: Launch with Docker CLI
+
+```bash
+docker run -itd \
+  -e VNC_PASSWORD="<YOUR VNC PASSWORD>" \
+  -e KEEP_APP_RUNNING=1 \
+  -p 5800:5800 \
+  -p 5900:5900 \
+  -v $PWD/config:/config:rw \
+  --name transgui \
+  transgui:latest
 ```
-version: '2'
+
+**Option 2**: Launch with Docker Compose
+
+```
+version: '3'
 services:
-  trgui:
-    image: acaranta/docker-tranguihttp
+  transgui:
+    image: docker-transgui:latest
     environment:
-      - VNC_PASSWORD=<yourVNCpassword>
-    volumes:
-      - <yourdockervolume>:/app/config:rw
+      - VNC_PASSWORD=<YOUR VNC PASSWORD>
+      - KEEP_APP_RUNNING=1
     ports:
       - 5800:5800
+      - 5900:5900
+    volumes:
+      - $PWD/config:/app/config:rw
 ```
 
+Then:
+
+1. Use browser to visit `<HOST IP ADDRESS>:5800`, or
+2. Use VNC client to connect `<HOST IP ADDRESS>:5900`
+
+It may take longer at the first startup because I already turn on the flag to for installing CJK fonts by setting `ENABLE_CJK_FONT=1` when building Docker image. After the installation, it doesn't have to download it again and the time to start the container will be shrinked.
+
+### Other Environment Variables
+
+Please visit [the base image repo and follow its instructions](https://github.com/jlesage/docker-baseimage-gui#environment-variables).
