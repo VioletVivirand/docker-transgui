@@ -1,0 +1,5 @@
+# Ignore VScode's workspace settings
+vscode/
+
+# Ignore the config directory for Transmission-Remote-GUI
+config/
