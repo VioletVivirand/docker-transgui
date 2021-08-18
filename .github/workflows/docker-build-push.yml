@@ -29,7 +29,7 @@ jobs:
         uses: docker/metadata-action@v3.4.1
         with:
           images: |
-            ghcr.io/transgui
+            ghcr.io/violetvivirand/transgui
           tags: |
             base-ubuntu-18.04-v3.5.7-tranggui-v5.18.0
             latest
