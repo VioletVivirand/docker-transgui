@@ -8,15 +8,7 @@ This Docker image is based on [jlesage/docker-baseimage-gui](https://github.com/
 
 ## Usage
 
-### Build
-
-```bash
-docker build -t transgui . --no-cache
-```
-
-### Launch
-
-Create a directory in `$PWD/config` before executing the following command:
+Create a directory in `$PWD/config` before executing the following command.
 
 **Option 1**: Launch with Docker CLI
 
