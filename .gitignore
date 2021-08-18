@@ -2,4 +2,5 @@
 .vscode/
 
 # Ignore the config directory for Transmission-Remote-GUI
+app/
 config/
