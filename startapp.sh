@@ -1,3 +1,2 @@
 #!/bin/sh
-cd /app
-exec /app/transgui --home=/app/config
+exec /app/transgui --home=/config/transgui
