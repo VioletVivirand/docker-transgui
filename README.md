@@ -20,7 +20,7 @@ docker run -itd \
   -p 5900:5900 \
   -v $PWD/config:/config:rw \
   --name transgui \
-  transgui:latest
+  ghcr.io/violetvivirand/transgui:latest
 ```
 
 **Option 2**: Launch with Docker Compose
@@ -29,7 +29,7 @@ docker run -itd \
 version: '3'
 services:
   transgui:
-    image: docker-transgui:latest
+    image: ghcr.io/violetvivirand/transgui:latest
     environment:
       - VNC_PASSWORD=<YOUR VNC PASSWORD>
       - KEEP_APP_RUNNING=1
