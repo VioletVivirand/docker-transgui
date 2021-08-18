@@ -25,6 +25,6 @@ RUN APP_ICON_URL=file:///app/transgui.png && install_app_icon.sh "$APP_ICON_URL"
 EXPOSE 5800
 EXPOSE 5900
 
-VOLUME /app/config:rw
+VOLUME /app/config
 
 ENV APP_NAME="Transmission Remote GUI"
