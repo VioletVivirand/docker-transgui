@@ -6,6 +6,8 @@ The GUI of the application is accessed through a modern web browser (no installa
 
 This Docker image is based on [jlesage/docker-baseimage-gui](https://github.com/jlesage/docker-baseimage-gui).
 
+Thanks to [acaranta](https://github.com/acaranta) with [his previous great work](https://github.com/acaranta/docker-tranguihttp) which is forked by me.
+
 ## Usage
 
 Create a directory in `$PWD/config` before executing the following command.
